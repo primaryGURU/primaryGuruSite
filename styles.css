@@ -57,8 +57,8 @@ body, html {
 }
 .btnContent {
     position: absolute;
-    width: 300px;
-    height: 200px;
+    width: 200px;
+    height: 100px;
     background-color: #ffffffd5;
     border: 5px solid #4c4887;
     border-radius: 25px;
@@ -66,7 +66,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 16px;
     color: #4c4887;
     text-align: center;
     transition: transform 0.3s ease; /* Анимация нажатия */
@@ -83,30 +83,38 @@ body, html {
 #section1 #btn_mat { top: 245px; left: 152px; }
 #section1 #btn_rus { top: 245px; left: 600px; }
 #section1 #btn_bel { top: 245px; left: 1048px; }
-#section1 #btn_cont1 { top: 120px; left: 100px; }
-#section1 #btn_cont2 { top: 120px; left: 550px; }
-#section1 #btn_cont3 { top: 120px; left: 1000px; }
+#section1 #btn_cont1 { top: 50px; left: 100px; }
+#section1 #btn_cont2 { top: 50px; left: 350px; }
+#section1 #btn_cont3 { top: 50px; left: 600px; }
+#section1 #btn_cont4 { top: 50px; left: 850px; }
+#section1 #btn_cont5 { top: 50px; left: 1100px; }
 
 #section2 #btn_rus { top: 245px; left: 152px; }
 #section2 #btn_bel { top: 245px; left: 600px; }
 #section2 #btn_home { top: 245px; left: 1048px; }
-#section2 #btn_cont1 { top: 120px; left: 100px; }
-#section2 #btn_cont2 { top: 120px; left: 550px; }
-#section2 #btn_cont3 { top: 120px; left: 1000px; }
+#section2 #btn_cont1 { top: 50px; left: 100px; }
+#section2 #btn_cont2 { top: 50px; left: 350px; }
+#section2 #btn_cont3 { top: 50px; left: 600px; }
+#section2 #btn_cont4 { top: 50px; left: 850px; }
+#section2 #btn_cont5 { top: 50px; left: 1100px; }
 
 #section3 #btn_mat { top: 245px; left: 152px; }
 #section3 #btn_bel { top: 245px; left: 600px; }
 #section3 #btn_home { top: 245px; left: 1048px; }
-#section3 #btn_cont1 { top: 120px; left: 100px; }
-#section3 #btn_cont2 { top: 120px; left: 550px; }
-#section3 #btn_cont3 { top: 120px; left: 1000px; }
+#section3 #btn_cont1 { top: 50px; left: 100px; }
+#section3 #btn_cont2 { top: 50px; left: 350px; }
+#section3 #btn_cont3 { top: 50px; left: 600px; }
+#section3 #btn_cont4 { top: 50px; left: 850px; }
+#section3 #btn_cont5 { top: 50px; left: 1100px; }
 
 #section4 #btn_mat { top: 245px; left: 152px; }
 #section4 #btn_rus { top: 245px; left: 600px; }
 #section4 #btn_home { top: 245px; left: 1048px; }
-#section4 #btn_cont1 { top: 120px; left: 100px; }
-#section4 #btn_cont2 { top: 120px; left: 550px; }
-#section4 #btn_cont3 { top: 120px; left: 1000px; }
+#section4 #btn_cont1 { top: 50px; left: 100px; }
+#section4 #btn_cont2 { top: 50px; left: 350px; }
+#section4 #btn_cont3 { top: 50px; left: 600px; }
+#section4 #btn_cont4 { top: 50px; left: 850px; }
+#section4 #btn_cont5 { top: 50px; left: 1100px; }
 
 .book-icon {
     width: 50px;

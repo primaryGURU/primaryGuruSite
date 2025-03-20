@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тренажёр словарных слов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .word-container {
+		    text-align: center;
+            font-size: 4em;
+            margin: 20px 0;
+            padding: 10px;
+            border-bottom: 2px solid #ccc;
+			
+        }
+
+        .letters-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+			place-content: center center;
+        }
+
+        .letter-btn {
+            padding: 20px 25px;
+            font-size: 2.2em;
+            cursor: pointer;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: all 0.3s;
+        }
+
+        .letter-btn:hover {
+            background-color: #e2e6ea;
+        }
+
+        .correct {
+            background-color: #28a745 !important;
+            color: white;
+            border-color: #218838;
+        }
+
+        .wrong {
+            animation: blink 0.6s 3;
+            background-color: #dc3545 !important;
+            color: white;
+            border-color: #c82333;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.3; }
+        }
+
+        .stats {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="word-container" id="wordContainer"></div>
+    <div class="letters-container" id="lettersContainer"></div>
+    <div class="stats">
+        Правильно: <span id="correctCount">0</span><br>
+        Ошибок: <span id="wrongCount">0</span>
+    </div>
+
+    <script>
+        const wordsData = [
+            { word: "лес_ница", missingIndex: 3, correct: "т" },
+            { word: "в_кзал", missingIndex: 1, correct: "о" },
+            { word: "ал_ея", missingIndex: 2, correct: "л" },
+            { word: "ин_екция", missingIndex: 2, correct: "ь" },
+			{ word: "фест_валь", missingIndex: 4, correct: "и" },
+            { word: "комп_с", missingIndex: 4, correct: "а" },
+            { word: "г_ризонт", missingIndex: 1, correct: "о" },
+            { word: "гор_зонт", missingIndex: 3, correct: "и" }
+ 
+        ];
+
+        let currentWordIndex = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+
+        function initGame() {
+            const currentWord = wordsData[currentWordIndex];
+            const wordContainer = document.getElementById('wordContainer');
+            const lettersContainer = document.getElementById('lettersContainer');
+            
+            wordContainer.innerHTML = currentWord.word.replace('_', '<span class="missing">_</span>');
+            lettersContainer.innerHTML = '';
+            const letters = shuffle([currentWord.correct, ...getRandomLetters(4, currentWord.correct)]);
+            
+            letters.forEach(letter => {
+                const button = document.createElement('button');
+                button.className = 'letter-btn';
+                button.textContent = letter.toUpperCase();
+                button.onclick = (event) => checkLetter(letter, currentWord, event.target);
+                lettersContainer.appendChild(button);
+            });
+        }
+
+        function checkLetter(selectedLetter, currentWord, button) {
+            if (selectedLetter === currentWord.correct) {
+                correctAnswers++;
+                document.getElementById('correctCount').textContent = correctAnswers;
+                
+                const wordParts = currentWord.word.split('_');
+                const correctWord = `${wordParts[0]}<span class="correct">${currentWord.correct}</span>${wordParts[1]}`;
+                document.getElementById('wordContainer').innerHTML = correctWord;
+                
+                setTimeout(() => {
+                    currentWordIndex = (currentWordIndex + 1) % wordsData.length;
+                    initGame();
+                }, 1500);
+            } else {
+                wrongAnswers++;
+                document.getElementById('wrongCount').textContent = wrongAnswers;
+                button.classList.add('wrong');
+                setTimeout(() => {
+                    button.remove();
+                }, 1000);
+            }
+        }
+
+        function getRandomLetters(count, exclude) {
+            const alphabet = 'авеёиайиаеоленосуъаыоьэоея';
+            const letters = [];
+            while (letters.length < count) {
+                const letter = alphabet[Math.floor(Math.random() * alphabet.length)];
+                if (letter !== exclude && !letters.includes(letter)) {
+                    letters.push(letter);
+                }
+            }
+            return letters;
+        }
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        initGame();
+    </script>
+</body>
+</html>

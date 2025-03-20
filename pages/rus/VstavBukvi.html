@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажёр вставки пропущенных букв</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .medal-counter {
+            position: fixed;
+            top: 100px;
+            right: 270px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 1000;
+        }
+
+        @keyframes medalPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .medal-pop {
+            animation: medalPop 0.5s;
+        }
+
+        .container {
+            background-color: #fff;
+			 width:600px;
+			 height:450px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+
+        #task {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        #task.error {
+            color: red;
+        }
+
+        #buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: green;
+        }
+
+        #result.error {
+            color: red;
+        }
+
+        #stats {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+		
+    </style>
+</head>
+<body>
+    <div class="medal-counter">
+        🏅 <span id="medal-count">0</span>
+    </div>
+    
+    <div class="container">
+        <h1>Тренажёр "Словарные слова"</h1>
+        <div id="task"></div>
+        <div id="buttons"></div>
+<div id="result"></div>
+        <div id="stats">
+            <p>Правильно: <span id="correctCount">0</span></p>
+            <p>Ошибки: <span id="errorCount">0</span></p>
+        </div>
+    </div>
+	
+        
+	
+    <script>
+        const words = [
+            { word: "к_ртина", correct: "а", options: ["о", "и", "а", "е"] },
+            { word: "м_л_ко", correct: "о,о", options: ["а,о", "а,а", "о,о", "о,а"] },
+			{ word: "п_тух", correct: "е", options: ["и", "ё", "е", "о"] },
+			{ word: "комн_та", correct: "а", options: ["и", "а", "е", "о"] },
+            { word: "с_бака", correct: "о", options: ["о", "а", "е", "и"] },
+            { word: "д_р_во", correct: "е,е", options: ["и,е", "о,о", "е,е", "е,и"] },
+			{ word: "п_нал", correct: "е", options: ["и", "ю", "о", "е"] },
+            { word: "г_р_зонт", correct: "о,и", options: ["о,е", "о,и", "о,а", "а,и"] },
+			{ word: "п_л_то", correct: "а,ь", options: ["а,и", "о,ь", "а,Ъ", "а,ь"] }
+        ];
+
+        let currentWordIndex = 0;
+        let correctCount = 0;
+        let errorCount = 0;
+
+        const taskElement = document.getElementById('task');
+        const buttonsElement = document.getElementById('buttons');
+        const resultElement = document.getElementById('result');
+        const correctCountElement = document.getElementById('correctCount');
+        const errorCountElement = document.getElementById('errorCount');
+        const medalCounter = document.querySelector('.medal-counter');
+        const medalCountElement = document.getElementById('medal-count');
+
+function displayWord() {
+    const word = words[currentWordIndex].word;
+    taskElement.innerHTML = word.replace(/_/g, '_');
+    buttonsElement.innerHTML = '';
+
+    words[currentWordIndex].options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.addEventListener('click', () => checkAnswer(option));
+        buttonsElement.appendChild(button);
+    });
+}
+
+function checkAnswer(selectedOption) {
+    const correctAnswer = words[currentWordIndex].correct;
+    const isCorrect = selectedOption === correctAnswer;
+
+    if (isCorrect) {
+        resultElement.textContent = "Правильно!";
+        resultElement.classList.remove('error');
+        correctCount++;
+
+        // Вставляем буквы вместо подчёркиваний
+        let word = words[currentWordIndex].word;
+        let letters = correctAnswer.split(',');
+        let index = 0;
+        taskElement.innerHTML = word.replace(/_/g, () => letters[index++] || '_');
+
+        // Анимация медали
+        medalCountElement.textContent = correctCount;
+        medalCounter.classList.add('medal-pop');
+        setTimeout(() => medalCounter.classList.remove('medal-pop'), 500);
+    } else {
+        resultElement.textContent = `Ошибка! Правильный ответ: ${correctAnswer}`;
+        resultElement.classList.add('error');
+        errorCount++;
+
+        // Подсветка задания красным
+        taskElement.classList.add('error');
+        setTimeout(() => taskElement.classList.remove('error'), 1500);
+    }
+
+    correctCountElement.textContent = correctCount;
+    errorCountElement.textContent = errorCount;
+
+    setTimeout(() => {
+        resultElement.textContent = '';
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+        displayWord();
+    }, 2000);
+}
+
+
+        displayWord();
+    </script>
+</body>
+</html>
