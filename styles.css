@@ -3,169 +3,130 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    scroll-behavior: smooth; /* Плавная прокрутка */
+    scroll-behavior: smooth;
 }
 
 .section {
     width: 100%;
-    height: 1080px;
+    min-height: 100vh; /* Заменяем фиксированную высоту на минимальную */
     position: relative;
-    background-color: #ee9548; /* Оранжевый фон */
+    background-color: #ee9548;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
     width: 100%;
-    height: 221.3px;
-    background-color: #332d69; /* Фиолетовый фон логотипа */
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.niz {
-    width: 100%;
-    height: 700px;
-    background-color: #02ffb3e8; /* Salat фон логотипа */
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    height: 25vh; /* Относительная высота */
+    background-color: #332d69;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+    position: relative;
 }
 
 .logo-text {
     color: #fff;
-    font-size: 60px;
-    position: absolute;
-    left: 248.6px;
-    top: 72px;
+    font-size: clamp(2rem, 5vw, 4rem); /* Адаптивный размер текста */
+    margin-left: 1rem;
+}
+
+.niz {
+    width: 100%;
+    flex-grow: 1; /* Занимает оставшееся пространство */
+    background-color: #02ffb3e8;
+    display: flex;
+    flex-wrap: wrap; /* Перенос кнопок на маленьких экранах */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem; /* Расстояние между кнопками */
 }
 
 .btn {
-    position: absolute;
-    width: 169px;
-    height: 92px;
-    background-color: #ffffffd5;
+    width: clamp(120px, 15vw, 169px); /* Адаптивная ширина */
+    height: clamp(70px, 10vw, 92px); /* Адаптивная высота */
+    background-color: #42fc89d5;
     border: 5px solid #4c4887;
     border-radius: 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    color: #4c4887;
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Адаптивный шрифт */
+    color: #024d3a;
     text-align: center;
-    transition: transform 0.3s ease; /* Анимация нажатия */
+    transition: transform 0.3s ease;
 }
+
 .btnContent {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    background-color: #ffffffd5;
+    width: clamp(150px, 20vw, 200px); /* Адаптивная ширина */
+    height: clamp(80px, 15vw, 100px); /* Адаптивная высота */
+    background-color: #ee9548;
     border: 5px solid #4c4887;
     border-radius: 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    color: #4c4887;
+    font-size: clamp(1.3rem, 2vw, 1rem); /* Адаптивный шрифт */
+    color: #ffffff;
     text-align: center;
-    transition: transform 0.3s ease; /* Анимация нажатия */
+    transition: transform 0.3s ease;
 }
 
-.btn:hover{
-    transform: scale(1.05);
-}
-.btnContent:hover{
+.btn:hover, .btnContent:hover {
     transform: scale(1.05);
 }
 
-/* Позиционирование кнопок для каждой секции */
-#section1 #btn_mat { top: 245px; left: 152px; }
-#section1 #btn_rus { top: 245px; left: 600px; }
-#section1 #btn_bel { top: 245px; left: 1048px; }
-#section1 #btn_cont1 { top: 50px; left: 100px; }
-#section1 #btn_cont2 { top: 50px; left: 350px; }
-#section1 #btn_cont3 { top: 50px; left: 600px; }
-#section1 #btn_cont4 { top: 50px; left: 850px; }
-#section1 #btn_cont5 { top: 50px; left: 1100px; }
-
-#section2 #btn_rus { top: 245px; left: 152px; }
-#section2 #btn_bel { top: 245px; left: 600px; }
-#section2 #btn_home { top: 245px; left: 1048px; }
-#section2 #btn_cont1 { top: 50px; left: 100px; }
-#section2 #btn_cont2 { top: 50px; left: 350px; }
-#section2 #btn_cont3 { top: 50px; left: 600px; }
-#section2 #btn_cont4 { top: 50px; left: 850px; }
-#section2 #btn_cont5 { top: 50px; left: 1100px; }
-
-#section3 #btn_mat { top: 245px; left: 152px; }
-#section3 #btn_bel { top: 245px; left: 600px; }
-#section3 #btn_home { top: 245px; left: 1048px; }
-#section3 #btn_cont1 { top: 50px; left: 100px; }
-#section3 #btn_cont2 { top: 50px; left: 350px; }
-#section3 #btn_cont3 { top: 50px; left: 600px; }
-#section3 #btn_cont4 { top: 50px; left: 850px; }
-#section3 #btn_cont5 { top: 50px; left: 1100px; }
-
-#section4 #btn_mat { top: 245px; left: 152px; }
-#section4 #btn_rus { top: 245px; left: 600px; }
-#section4 #btn_home { top: 245px; left: 1048px; }
-#section4 #btn_cont1 { top: 50px; left: 100px; }
-#section4 #btn_cont2 { top: 50px; left: 350px; }
-#section4 #btn_cont3 { top: 50px; left: 600px; }
-#section4 #btn_cont4 { top: 50px; left: 850px; }
-#section4 #btn_cont5 { top: 50px; left: 1100px; }
-
-.book-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #f5be45; /* Цвет книги */
-    position: absolute;
-    top: 15px;
-    left: 23px;
-    border-radius: 10px;
+/* Контейнер для кнопок навигации */
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1200px; /* Ограничение максимальной ширины */
 }
 
+/* Заголовок секции */
 .section-title {
     position: absolute;
-    top: 75px;
+    top: 50px;
     left: 90%;
     transform: translateX(-50%);
     font-size: 40px;
     color: #ffffff;
     z-index: 10;
 }
+
 img {
-/* border: 1px solid #ddd;
-border-radius: 4px; */
-padding: 30px;
-width: 200px;
+    padding: 1rem;
+    width: clamp(90px, 20vw, 180px); /* Адаптивный размер логотипа */
 }
 
-#section1 {
-width: 100%;
-    height: 1080px;
-    position: relative;
-    background-color: #02c21b; /* Salat фон */
-}
+/* Цвета секций */
+#section1 { background-color: #02c21b; }
+#section2 { background-color: #489eee; }
+#section3 { background-color: #eea648; }
+#section4 { background-color: #fcda6d; }
 
-#section2 {
-width: 100%;
-    height: 1080px;
-    position: relative;
-    background-color: #489eee; /* Salat фон */
-}
+/* Медиа-запросы для дополнительной адаптации */
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 
-#section3 {
-width: 100%;
-    height: 1080px;
-    position: relative;
-    background-color: #eea648; /* Salat фон */
-}
+    .btn, .btnContent {
+        width: 80%; /* Увеличение ширины на маленьких экранах */
+        max-width: 300px;
+    }
 
-#section4 {
-width: 100%;
-    height: 1080px;
-    position: relative;
-    background-color: #fcda6d; /* Salat фон */
+    .logo-text {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+    }
 }
