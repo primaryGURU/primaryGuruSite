@@ -19,7 +19,7 @@ body, html {
 .logo {
     width: 100%;
     height: 25vh; /* Относительная высота */
-    background-color: #332d69;
+    background-color: #67568C;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -28,7 +28,7 @@ body, html {
 }
 
 .logo-text {
-    color: #fff;
+    color: #A5F299;
     font-size: clamp(2rem, 5vw, 4rem); /* Адаптивный размер текста */
     margin-left: 1rem;
 }
@@ -36,7 +36,7 @@ body, html {
 .niz {
     width: 100%;
     flex-grow: 1; /* Занимает оставшееся пространство */
-    background-color: #02ffb3e8;
+    background-color: #F25749;
     display: flex;
     flex-wrap: wrap; /* Перенос кнопок на маленьких экранах */
     justify-content: center;
@@ -48,15 +48,15 @@ body, html {
 .btn {
     width: clamp(120px, 15vw, 169px); /* Адаптивная ширина */
     height: clamp(70px, 10vw, 92px); /* Адаптивная высота */
-    background-color: #42fc89d5;
-    border: 5px solid #4c4887;
+    background-color: #A5F299;
+    border: 5px solid #67568C;
     border-radius: 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: clamp(1rem, 2.5vw, 1.5rem); /* Адаптивный шрифт */
-    color: #024d3a;
+    color: #8C3737;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -64,15 +64,15 @@ body, html {
 .btnContent {
     width: clamp(150px, 20vw, 200px); /* Адаптивная ширина */
     height: clamp(80px, 15vw, 100px); /* Адаптивная высота */
-    background-color: #ee9548;
-    border: 5px solid #4c4887;
+    background-color: #A5F299;
+    border: 5px solid #8C3737;
     border-radius: 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: clamp(1.3rem, 2vw, 1rem); /* Адаптивный шрифт */
-    color: #ffffff;
+    color: #67568C;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -99,7 +99,7 @@ body, html {
     left: 90%;
     transform: translateX(-50%);
     font-size: 40px;
-    color: #ffffff;
+    color: #fd8378;
     z-index: 10;
 }
 
@@ -109,10 +109,10 @@ img {
 }
 
 /* Цвета секций */
-#section1 { background-color: #8ef507; }
-#section2 { background-color: #429ef5; }
-#section3 { background-color: #f5a53d; }
-#section4 { background-color: #fdd961; }
+#section1 { background-color: #51acb3; }
+#section2 { background-color: #8C3737; }
+#section3 { background-color: #e6fa2faf; }
+#section4 { background-color: #BCB3F2; }
 
 /* Медиа-запросы для дополнительной адаптации */
 @media (max-width: 768px) {
