@@ -1,0 +1,163 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+.section {
+    width: 100%;
+    height: 1080px;
+    position: relative;
+    background-color: #ee9548; /* Оранжевый фон */
+}
+
+.logo {
+    width: 100%;
+    height: 221.3px;
+    background-color: #332d69; /* Фиолетовый фон логотипа */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.niz {
+    width: 100%;
+    height: 700px;
+    background-color: #02ffb3e8; /* Salat фон логотипа */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.logo-text {
+    color: #fff;
+    font-size: 60px;
+    position: absolute;
+    left: 248.6px;
+    top: 72px;
+}
+
+.btn {
+    position: absolute;
+    width: 169px;
+    height: 92px;
+    background-color: #ffffffd5;
+    border: 5px solid #4c4887;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #4c4887;
+    text-align: center;
+    transition: transform 0.3s ease; /* Анимация нажатия */
+}
+.btnContent {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffffd5;
+    border: 5px solid #4c4887;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #4c4887;
+    text-align: center;
+    transition: transform 0.3s ease; /* Анимация нажатия */
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+.btnContent:hover{
+    transform: scale(1.05);
+}
+
+/* Позиционирование кнопок для каждой секции */
+#section1 #btn_mat { top: 245px; left: 152px; }
+#section1 #btn_rus { top: 245px; left: 600px; }
+#section1 #btn_bel { top: 245px; left: 1048px; }
+#section1 #btn_cont1 { top: 120px; left: 100px; }
+#section1 #btn_cont2 { top: 120px; left: 550px; }
+#section1 #btn_cont3 { top: 120px; left: 1000px; }
+
+#section2 #btn_rus { top: 245px; left: 152px; }
+#section2 #btn_bel { top: 245px; left: 600px; }
+#section2 #btn_home { top: 245px; left: 1048px; }
+#section2 #btn_cont1 { top: 120px; left: 100px; }
+#section2 #btn_cont2 { top: 120px; left: 550px; }
+#section2 #btn_cont3 { top: 120px; left: 1000px; }
+
+#section3 #btn_mat { top: 245px; left: 152px; }
+#section3 #btn_bel { top: 245px; left: 600px; }
+#section3 #btn_home { top: 245px; left: 1048px; }
+#section3 #btn_cont1 { top: 120px; left: 100px; }
+#section3 #btn_cont2 { top: 120px; left: 550px; }
+#section3 #btn_cont3 { top: 120px; left: 1000px; }
+
+#section4 #btn_mat { top: 245px; left: 152px; }
+#section4 #btn_rus { top: 245px; left: 600px; }
+#section4 #btn_home { top: 245px; left: 1048px; }
+#section4 #btn_cont1 { top: 120px; left: 100px; }
+#section4 #btn_cont2 { top: 120px; left: 550px; }
+#section4 #btn_cont3 { top: 120px; left: 1000px; }
+
+.book-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #f5be45; /* Цвет книги */
+    position: absolute;
+    top: 15px;
+    left: 23px;
+    border-radius: 10px;
+}
+
+.section-title {
+    position: absolute;
+    top: 75px;
+    left: 90%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: #ffffff;
+    z-index: 10;
+}
+img {
+/* border: 1px solid #ddd;
+border-radius: 4px; */
+padding: 30px;
+width: 200px;
+}
+
+#section1 {
+width: 100%;
+    height: 1080px;
+    position: relative;
+    background-color: #02c21b; /* Salat фон */
+}
+
+#section2 {
+width: 100%;
+    height: 1080px;
+    position: relative;
+    background-color: #489eee; /* Salat фон */
+}
+
+#section3 {
+width: 100%;
+    height: 1080px;
+    position: relative;
+    background-color: #eea648; /* Salat фон */
+}
+
+#section4 {
+width: 100%;
+    height: 1080px;
+    position: relative;
+    background-color: #fcda6d; /* Salat фон */
+}

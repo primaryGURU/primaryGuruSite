@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лендинг</title>
+    <link rel="stylesheet" href="styles.css">
+        
+    
+</head>
+<body>
+    <!-- Секция 1: Главная страница -->
+    <div id="section1" class="section">
+        <div class="logo">
+            <img src="img\Logo_2.svg" alt="Логотип Primary Guru">
+            <div class="logo-text">Primary.Guru</div>
+        </div>
+        <div id="btn_mat" class="btn" data-target="section2">
+            <!-- <div class="book-icon"></div> -->
+            <span>Математика</span>
+        </div>
+        <div id="btn_rus" class="btn" data-target="section3">
+            <!-- <div class="book-icon"></div> -->
+            <span>Русский язык</span>
+        </div>
+        <div id="btn_bel" class="btn" data-target="section4">
+            <!-- <div class="book-icon"></div> -->
+            <span>Беларуская мова</span>
+        </div>
+        <div class="section-title">Главная</div>
+        <div class="niz">
+            <div id="btn_cont1" class="btnContent"></div>
+            <div id="btn_cont2" class="btnContent"></div>
+            <div id="btn_cont3" class="btnContent"></div>  
+        </div>
+    </div>
+
+    <!-- Секция 2: Математика -->
+    <div id="section2" class="section">
+        <div class="logo">
+            <img src="img\Logo_2.svg" alt="Логотип Primary Guru">
+            <div class="logo-text">Primary.Guru</div>
+            </div>
+        <div id="btn_rus" class="btn" data-target="section3">
+            <!-- <div class="book-icon"></div> -->
+            <span>Русский язык</span>
+        </div>
+        <div id="btn_bel" class="btn" data-target="section4">
+            <!-- <div class="book-icon"></div> -->
+            <span>Беларуская мова</span>
+        </div>
+        <div id="btn_home" class="btn" data-target="section1">
+            <!-- <div class="book-icon"></div> -->
+            <span style="font-size: 40px;">🏠</span>
+        </div>
+        <div class="section-title">Математика</div>
+        <div class="niz">
+            <div id="btn_cont1" class="btnContent">
+                <span>Русский язык</span>
+            </div>
+            <div id="btn_cont2" class="btnContent"></div>
+            <div id="btn_cont3" class="btnContent"></div> 
+        </div>
+    </div>
+
+    <!-- Секция 3: Русский язык -->
+    <div id="section3" class="section">
+        <div class="logo">
+            <img src="img\Logo_2.svg" alt="Логотип Primary Guru">
+            <div class="logo-text">Primary.Guru</div>
+        </div>
+        <div id="btn_mat" class="btn" data-target="section2">
+            <!-- <div class="book-icon"></div> -->
+            <span>Математика</span>
+        </div>
+        <div id="btn_bel" class="btn" data-target="section4">
+            <!-- <div class="book-icon"></div> -->
+            <span>Беларуская мова</span>
+        </div>
+        <div id="btn_home" class="btn" data-target="section1">
+            <!-- <div class="book-icon"></div> -->
+            <span style="font-size: 40px;">🏠</span>
+        </div>
+        <div class="section-title">Русский язык</div>
+        <div class="niz">
+            <div id="btn_cont1" class="btnContent"></div>
+            <div id="btn_cont2" class="btnContent"></div>
+            <div id="btn_cont3" class="btnContent"></div>  
+        </div>
+    </div>
+
+    <!-- Секция 4: Беларуская мова -->
+    <div id="section4" class="section">
+        <div class="logo">
+            <img src="img\Logo_2.svg" alt="Логотип Primary Guru">
+            <div class="logo-text">Primary.Guru</div>
+        </div>
+        <div id="btn_mat" class="btn" data-target="section2">
+            <!-- <div class="book-icon"></div> -->
+            <span>Математика</span>
+        </div>
+        <div id="btn_rus" class="btn" data-target="section3">
+            <!-- <div class="book-icon"></div> -->
+            <span>Русский язык</span>
+        </div>
+        <div id="btn_home" class="btn" data-target="section1">
+            <!-- <div class="book-icon"></div> -->
+            <span style="font-size: 40px;">🏠</span>
+        </div>
+        <div class="section-title">Беларуская мова</div>
+        <div class="niz">
+            <div id="btn_cont1" class="btnContent"></div>
+            <div id="btn_cont2" class="btnContent"></div>
+            <div id="btn_cont3" class="btnContent"></div>    
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetSectionId = button.getAttribute('data-target');
+                const targetSection = document.getElementById(targetSectionId);
+                const targetOffset = targetSection.offsetTop;
+
+                // Плавная прокрутка к целевой секции
+                window.scrollTo({
+                    top: targetOffset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
