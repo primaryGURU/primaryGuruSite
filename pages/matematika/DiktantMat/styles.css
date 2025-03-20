@@ -145,3 +145,29 @@ button:hover {
         transform: scale(1);
     }
 }
+
+
+          .fixed-logo {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 1000;
+          }
+          
+          .logo-link {
+            text-decoration: none; /* убираем подчеркивание ссылки */
+            color: inherit; /* убираем цвет ссылки */
+          }
+          
+          .logo-link:hover .fixed-logo {
+            opacity: 0.8; /* уменьшаем прозрачность при наведении */
+            transition: opacity 0.3s ease; /* плавный переход */
+          }
+          
+          .logo-link .fixed-logo {
+            opacity: 1; /* стандартная непрозрачность */
+            transition: opacity 0.3s ease; /* плавный переход обратно */
+          }
+         
