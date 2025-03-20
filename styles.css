@@ -109,10 +109,10 @@ img {
 }
 
 /* Цвета секций */
-#section1 { background-color: #02c21b; }
-#section2 { background-color: #489eee; }
-#section3 { background-color: #eea648; }
-#section4 { background-color: #fcda6d; }
+#section1 { background-color: #8ef507; }
+#section2 { background-color: #429ef5; }
+#section3 { background-color: #f5a53d; }
+#section4 { background-color: #fdd961; }
 
 /* Медиа-запросы для дополнительной адаптации */
 @media (max-width: 768px) {
