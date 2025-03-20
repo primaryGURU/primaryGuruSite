@@ -63,6 +63,30 @@
             font-size: 1.2em;
             margin-top: 20px;
         }
+
+        .fixed-logo {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 1000;
+          }
+          
+          .logo-link {
+            text-decoration: none; /* убираем подчеркивание ссылки */
+            color: inherit; /* убираем цвет ссылки */
+          }
+          
+          .logo-link:hover .fixed-logo {
+            opacity: 0.8; /* уменьшаем прозрачность при наведении */
+            transition: opacity 0.3s ease; /* плавный переход */
+          }
+          
+          .logo-link .fixed-logo {
+            opacity: 1; /* стандартная непрозрачность */
+            transition: opacity 0.3s ease; /* плавный переход обратно */
+          }
     </style>
 </head>
 <body>
@@ -149,5 +173,25 @@
 
         initGame();
     </script>
+    <a href="../../../index.html" class="logo-link">
+        <svg class="fixed-logo" width="541" height="581" viewBox="0 0 541 581" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="homeLogo">
+                <rect id="Rectangle 8" x="55.3339" y="279" width="431" height="304" fill="#21DD7F"/>
+                <path id="Rectangle 12" d="M55.3339 281H486.334V294L55.3339 328.5V281Z" fill="#2BB771"/>
+                <path id="Polygon 1" d="M270.334 2L539.668 282.5H1L270.334 2Z" fill="#FF8902"/>
+                <path id="Polygon 2" d="M271 0.5L356 282.5H0L271 0.5Z" fill="#CC740E"/>
+                <g id="Group 1">
+                <path id="Rectangle 13" d="M311.334 390.521L320.499 379.773L342.628 416.443L377.401 468.92L397.001 513.81L388.457 521.397H311.334V390.521Z" fill="#BAFCDB"/>
+                <rect id="Rectangle 14" x="320.499" y="379" width="77.1233" height="133.213" fill="#3D4880"/>
+                <rect id="Rectangle 15" x="320.499" y="389.398" width="66.996" height="122.307" fill="#5266CB"/>
+                </g>
+                <g id="Group 2">
+                <path id="Rectangle 13_2" d="M148.334 417.111L155.582 408.611L173.082 437.611L200.582 479.111L216.082 514.611L209.325 520.611H148.334V417.111Z" fill="#BAFCDB"/>
+                <rect id="Rectangle 14_2" x="155.582" y="408" width="60.9911" height="105.348" fill="#3D4880"/>
+                <rect id="Rectangle 15_2" x="155.582" y="416.223" width="52.9821" height="96.7232" fill="#5266CB"/>
+                </g>
+                </g>
+                </svg>
+                </a>
 </body>
 </html>
