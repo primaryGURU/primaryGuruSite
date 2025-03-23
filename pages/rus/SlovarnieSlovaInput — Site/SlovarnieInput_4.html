@@ -129,7 +129,7 @@
                 <rect width="584" height="105" rx="20" stroke="none"/>
                 <rect x="0.5" y="0.5" width="583" height="104" rx="19.5" fill="none"/>
                 <foreignObject width="584" height="105">
-                    <input id="textInput" type="text" readonly>
+                    <input id="textInput" type="text" readonly placeholder="Нажми здесь">
                 </foreignObject>
             </g>
 
@@ -210,6 +210,8 @@
             { word: 'автобус', img: 'img/автобус.png', checkElementId: 'wordToCheck' },
             { word: 'трамвай', img: 'img/трамвай.png', checkElementId: 'wordToCheck' },
             { word: 'календарь', img: 'img/календарь.png', checkElementId: 'wordToCheck' },
+            { word: 'салат', img: 'img/салат.png', checkElementId: 'wordToCheck' },
+            { word: 'яблоко', img: 'img/яблоко.png', checkElementId: 'wordToCheck' },
             { word: 'дятел', img: 'img/дятел.png', checkElementId: 'wordToCheck' },
             { word: 'сапоги', img: 'img/сапоги.png', checkElementId: 'wordToCheck' },
             { word: 'телевизор', img: 'img/телевизор.png', checkElementId: 'wordToCheck' },
@@ -292,6 +294,7 @@
         let currentInput = '';
         let currentIndex = 0;
         let energyLevel = 0;
+        let correctAnswers = 0;
 
         const textInput = document.getElementById('textInput');
         const energyBars = Array.from(svg.querySelectorAll('#energi g'));
@@ -307,7 +310,7 @@
             wordToCheck.textContent = wordObjects[currentIndex].word;
             currentInput = '';
             textInput.value = '';
-            energyCircle.setAttribute('visibility', 'hidden');
+            energyCircle.setAttribute('visibility', 'hidden'); // Скрываем кружок при загрузке нового слова
         }
 
         // Загружаем первый объект
@@ -329,42 +332,39 @@
         svg.querySelector('#btnCheck').addEventListener('click', (e) => {
             e.stopPropagation();
             if (currentInput === wordToCheck.textContent) {
+                correctAnswers++;
                 if (energyLevel < energyBars.length) {
                     circleVisibility.beginElement();
                     circleMotion.beginElement();
 
                     setTimeout(() => {
                         const bar = energyBars[energyLevel];
-                        bar.classList.add('energy-filled');
-                        if (energyLevel >= energyBars.length - 1) {
-                            energyBars.forEach((bar, index) => {
-                                const gradient = `linear-gradient(45deg, #4CAF50 ${index * 10}%, #2196F3 100%)`;
-                                bar.querySelector('path, rect').style.fill = gradient;
-                            });
-                        }
+                        bar.classList.add('energy-filled'); // Добавляем класс для изменения цвета
                         energyLevel++;
 
-                        // Задержка перед сменой картинки
-                        setTimeout(() => {
-                            currentIndex = (currentIndex + 1) % wordObjects.length;
-                            loadCurrentObject();
-                            keyboardContainer.style.display = 'none';
-                        }, 500);
-                    }, 2000);
-                } else {
-                    energyLevel = 1;
-                    energyBars.forEach(bar => {
-                        bar.classList.remove('energy-filled');
-                        bar.querySelector('path, rect').style.fill = '#4CAF50';
-                    });
-                    energyBars[0].classList.add('energy-filled');
-
-                    // Задержка перед сменой картинки в случае нового цикла
-                    setTimeout(() => {
-                        currentIndex = (currentIndex + 1) % wordObjects.length;
-                        loadCurrentObject();
-                        keyboardContainer.style.display = 'none';
-                    }, 500);
+                        // Если батарейка заполнена (10 правильных ответов)
+                        if (energyLevel === energyBars.length) {
+                            setTimeout(() => {
+                                // Сбрасываем цвета ячеек и начинаем заново
+                                energyBars.forEach(bar => {
+                                    bar.classList.remove('energy-filled');
+                                    // Не устанавливаем fill вручную, полагаемся на CSS
+                                });
+                                energyLevel = 0;
+                                correctAnswers = 0;
+                                currentIndex = (currentIndex + 1) % wordObjects.length;
+                                loadCurrentObject();
+                                keyboardContainer.style.display = 'none';
+                            }, 1000); // Задержка перед сбросом после заполнения
+                        } else {
+                            // Обычный переход к следующему слову
+                            setTimeout(() => {
+                                currentIndex = (currentIndex + 1) % wordObjects.length;
+                                loadCurrentObject();
+                                keyboardContainer.style.display = 'none';
+                            }, 500);
+                        }
+                    }, 2000); // Длительность анимации круга
                 }
             } else {
                 textInput.style.color = 'red';

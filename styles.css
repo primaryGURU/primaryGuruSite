@@ -44,6 +44,17 @@ body, html {
     padding: 1rem;
     gap: 1rem; /* Расстояние между кнопками */
 }
+.nizHome {
+    width: 100%;
+    flex-grow: 1; /* Занимает оставшееся пространство */
+    background-color: #f5a69b;
+    display: flex;
+    flex-wrap: wrap; /* Перенос кнопок на маленьких экранах */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem; /* Расстояние между кнопками */
+}
 
 .btn {
     width: clamp(120px, 15vw, 169px); /* Адаптивная ширина */
@@ -91,6 +102,15 @@ body, html {
     width: 100%;
     max-width: 1200px; /* Ограничение максимальной ширины */
 }
+.nav-buttonsHome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1200px; /* Ограничение максимальной ширины */
+}
 
 /* Заголовок секции */
 .section-title {
@@ -130,3 +150,23 @@ img {
         font-size: clamp(1.5rem, 4vw, 3rem);
     }
 }
+
+.card {
+    border-radius: 20px;
+    border: solid 5px;
+    border-color: #67568C;
+    background-color: #e6fa2faf;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 10%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.05);
+  }
+  
+  .container {
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
