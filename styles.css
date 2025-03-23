@@ -156,9 +156,9 @@ img {
     border: solid 5px;
     border-color: #67568C;
     background-color: #e6fa2faf;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 10px 15px 0 rgba(48, 0, 0, 0.747);
     transition: 0.3s;
-    width: 10%;
+    width: 12%;
   }
   
   .card:hover {
