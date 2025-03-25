@@ -1,0 +1,27 @@
+<svg width="500" height="333" viewBox="0 0 500 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="prolet" clip-path="url(#clip0_27_122)">
+<rect width="500" height="333" fill="white"/>
+<g id="Group 6">
+<path id="Rectangle 6" d="M0 0H500V333H0V0Z" fill="url(#paint0_linear_27_122)"/>
+<rect id="Rectangle 3" y="104.714" width="402.381" height="121.429" fill="url(#paint1_linear_27_122)"/>
+<g id="Group 5">
+<circle id="Ellipse 1" cx="401.19" cy="165.429" r="59.2143" fill="#E7B71C" stroke="#E56767" stroke-width="3"/>
+<path id="Ellipse 2" d="M400.69 143.167C400.69 155.185 390.947 164.929 378.929 164.929C366.91 164.929 357.167 155.185 357.167 143.167C357.167 131.148 366.91 121.405 378.929 121.405C390.947 121.405 400.69 131.148 400.69 143.167Z" fill="#FBEEC3" stroke="#E56767"/>
+<circle id="Ellipse 3" cx="433.571" cy="194.774" r="9.61905" fill="#FEF1C6" stroke="#E56767"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_27_122" x1="500" y1="166.5" x2="0" y2="166.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#586BB7"/>
+<stop offset="1" stop-color="#272F51"/>
+</linearGradient>
+<linearGradient id="paint1_linear_27_122" x1="402.381" y1="165.429" x2="0" y2="165.429" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E56767"/>
+<stop offset="1" stop-color="#7F3939"/>
+</linearGradient>
+<clipPath id="clip0_27_122">
+<rect width="500" height="333" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -73,19 +73,28 @@ body, html {
 }
 
 .btnContent {
-    width: clamp(150px, 20vw, 200px); /* Адаптивная ширина */
-    height: clamp(80px, 15vw, 100px); /* Адаптивная высота */
+    /*width: clamp(150px, 20vw, 500px);  Адаптивная ширина */
+    /*height: clamp(80px, 15vw, 300px);  Адаптивная высота */
+    width: 200px;
+    height: 150px;
     background-color: #A5F299;
-    border: 5px solid #8C3737;
+    border: 5px solid #ffffff;
     border-radius: 25px;
     cursor: pointer;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
     font-size: clamp(1.3rem, 2vw, 1rem); /* Адаптивный шрифт */
     color: #67568C;
     text-align: center;
     transition: transform 0.3s ease;
+}
+ 
+.btn-image {
+    width: 120%;
+    height: 230px;
+    /* object-fit: cover; */
 }
 
 .btn:hover, .btnContent:hover {
@@ -123,7 +132,7 @@ body, html {
     z-index: 10;
 }
 
-img {
+.logoBook {
     padding: 1rem;
     width: clamp(90px, 20vw, 180px); /* Адаптивный размер логотипа */
 }
@@ -152,21 +161,85 @@ img {
 }
 
 .card {
-    border-radius: 20px;
-    border: solid 5px;
-    border-color: #67568C;
-    background-color: #e6fa2faf;
-    box-shadow: 0 10px 15px 0 rgba(48, 0, 0, 0.747);
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
-    width: 12%;
-  }
-  
-  .card:hover {
+    width: 200px;
+    overflow: hidden;
+    transition-duration: 0.4s;
+}
+
+.card:hover { 
+    transition: transform 0.5s ease;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transform: scale(1.05);
+    
   }
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #433f69;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+.card-price {
+    font-weight: bold;
+    color: #a5f299;
+}
+
+.card-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.card-button:hover {
+    background-color: #2980b9;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #2c3e50;
+}
   
-  .container {
+  /* .container {
     padding: 2px 8px;
     border-radius: 20px;
-  }
+  } */
