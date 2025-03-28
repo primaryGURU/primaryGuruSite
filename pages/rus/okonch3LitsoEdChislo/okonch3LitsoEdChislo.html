@@ -61,7 +61,7 @@
             <rect id="bgStar" x="129" y="644" width="261" height="147" rx="22" fill="#B8ECFF"/>
             <rect id="bgFrog" x="624" y="644" width="255" height="147" rx="22" fill="#B8ECFF"/>
             <text id="title" fill="#505F9A" font-family="Arial" font-size="40"><tspan x="210" y="130.867">Пишем окончания правильно.</tspan></text>
-            <rect id="inputPlace" x="547" y="363" width="130" height="62" rx="13" stroke="#505F9A" stroke-width="4" fill="transparent" style="cursor: pointer;"/>
+            <rect id="inputPlace" x="547" y="363" width="100" height="62" rx="13" stroke="#505F9A" stroke-width="4" fill="transparent" style="cursor: pointer;"/>
             <text id="word" fill="#0E3E86" font-family="Arial" font-size="64" text-anchor="end"><tspan x="540" y="409.188">Он шум</tspan></text>
             <text id="input" fill="#007C51" font-family="Arial" font-size="64" text-anchor="start"><tspan x="551" y="409.188"></tspan></text>
             <path id="StarGold" d="M297.836 678.918L308.11 699.049C308.764 700.33 309.991 701.222 311.411 701.448L333.732 704.998C334.941 705.19 335.423 706.673 334.558 707.539L318.586 723.531C317.57 724.549 317.101 725.991 317.325 727.412L320.847 749.737C321.037 750.947 319.776 751.863 318.685 751.308L298.54 741.06C297.258 740.408 295.742 740.408 294.46 741.06L274.315 751.308C273.224 751.863 271.963 750.947 272.153 749.737L275.675 727.412C275.899 725.991 275.43 724.549 274.414 723.531L258.442 707.539C257.577 706.673 258.059 705.19 259.268 704.998L281.589 701.448C283.009 701.222 284.236 700.33 284.89 699.049L295.164 678.918C295.721 677.827 297.279 677.827 297.836 678.918Z" fill="#FDC754" stroke="#FC5E42" stroke-width="3"/>
@@ -87,7 +87,7 @@
             <text id="inputScoreStar" fill="#FCB32D" stroke="#FF653F" stroke-width="2" font-family="Arial" font-size="64"><tspan x="172" y="741.773">0</tspan></text>
             <text id="inputScoreFrog" fill="#A0CB6C" stroke="#7D6262" stroke-width="2" font-family="Arial" font-size="64"><tspan x="654" y="741.773">0</tspan></text>
             <g id="dropdown" transform="translate(547, 425)" style="display: none;">
-                <rect width="115" height="150" rx="13" fill="white" stroke="#505F9A" stroke-width="4"/>
+                <rect width="100" height="150" rx="13" fill="white" stroke="#505F9A" stroke-width="4"/>
                 <text font-family="Arial" font-size="48" fill="#007C51" style="cursor: pointer;">
                     <tspan x="10" y="50" id="option1"></tspan>
                     <tspan x="10" y="110" id="option2"></tspan>
@@ -99,27 +99,27 @@
 
     <script>
         const words = [
-    { text: "Ты шум", options: ["ишь", "ешь"], correct: "ишь" },
-    { text: "Ты беж", options: ["ешь", "ишь"], correct: "ишь" },
-    { text: "Ты смотр", options: ["ишь", "ешь"], correct: "ишь" },
-    { text: "Ты рису", options: ["ешь", "ишь"], correct: "ешь" },
-    { text: "Ты пиш", options: ["ешь", "ишь"], correct: "ешь" },
-    { text: "Ты чита", options: ["ишь", "ешь"], correct: "ешь" },
-    { text: "Ты стро", options: ["ешь", "ишь"], correct: "ишь" },
-    { text: "Ты говор", options: ["ишь", "ешь"], correct: "ишь" },
-    { text: "Ты сид", options: ["ишь", "ешь"], correct: "ишь" },
-    { text: "Ты дума", options: ["ишь", "ешь"], correct: "ешь" },
-    { text: "Ты гуля", options: ["ешь", "ишь"], correct: "ешь" },
-    { text: "Ты уч", options: ["ешь", "ишь"], correct: "ишь" },
-    { text: "Ты плыв", options: ["ёшь", "ишь"], correct: "ёшь" },
-    { text: "Ты по", options: ["ишь", "ёшь"], correct: "ёшь" },
-    { text: "Ты леж", options: ["ишь", "ешь"], correct: "ишь" },
-    { text: "Ты бега", options: ["ишь", "ешь"], correct: "ешь" },
-    { text: "Ты сп", options: ["ишь", "ешь"], correct: "ишь" },
-    { text: "Ты рису", options: ["ишь", "ешь"], correct: "ешь" },
-    { text: "Ты плач", options: ["ишь", "ешь"], correct: "ешь" },
-    { text: "Ты крич", options: ["ишь", "ешь"], correct: "ишь" }
-];
+            { text: "Он шум", options: ["ит", "ет"], correct: "ит" },
+            { text: "Он беж", options: ["ет", "ит"], correct: "ит" },
+            { text: "Он смотр", options: ["ит", "ет"], correct: "ит" },
+            { text: "Он рису", options: ["ет", "ит"], correct: "ет" },
+            { text: "Она пиш", options: ["ит", "ет"], correct: "ет" },
+            { text: "Он чита", options: ["ет", "ит"], correct: "ет" },
+            { text: "Он стро", options: ["ит", "ет"], correct: "ит" },
+            { text: "Он говор", options: ["ет", "ит"], correct: "ит" },
+            { text: "Он сид", options: ["ит", "ет"], correct: "ит" },
+            { text: "Он дума", options: ["ит", "ет"], correct: "ет" },
+            { text: "Она гуля", options: ["ет", "ит"], correct: "ет" },
+            { text: "Он уч", options: ["ет", "ит"], correct: "ит" },
+            { text: "Он плыв", options: ["ит", "ёт"], correct: "ёт" },
+            { text: "Она по", options: ["ёт", "ют"], correct: "ёт" },
+            { text: "Он леж", options: ["ет", "ит"], correct: "ит" },
+            { text: "Он бега", options: ["ит", "ет"], correct: "ет" },
+            { text: "Он сп", options: ["ит", "ет"], correct: "ит" },
+            { text: "Он рису", options: ["ит", "ет"], correct: "ет" },
+            { text: "Она плач", options: ["ет", "ит"], correct: "ет" },
+            { text: "Он крич", options: ["ет", "ит"], correct: "ит" }
+        ];
 
         let currentWordIndex = 0;
         let starScore = 0;
@@ -218,7 +218,7 @@
 
         updateWord();
     </script>
-    <a href="../../../index.html" class="logo-link">
+    <!-- <a href="../../../index.html" class="logo-link">
         <svg class="fixed-logo" width="541" height="581" viewBox="0 0 541 581" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="homeLogo">
                 <rect id="Rectangle 8" x="55.3339" y="279" width="431" height="304" fill="#21DD7F"/>
@@ -237,6 +237,6 @@
                 </g>
                 </g>
                 </svg>
-                </a>
+                </a> -->
 </body>
 </html>
